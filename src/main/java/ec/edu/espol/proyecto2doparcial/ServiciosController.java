@@ -6,8 +6,12 @@ package ec.edu.espol.proyecto2doparcial;
 
 import java.net.URL;
 import java.util.ResourceBundle;
+import javafx.event.ActionEvent;
+import javafx.fxml.FXML;
 import javafx.fxml.Initializable;
 
+import javafx.scene.control.Button;
+import javafx.scene.control.TableColumn;
 /**
  * FXML Controller class
  *
@@ -15,6 +19,21 @@ import javafx.fxml.Initializable;
  */
 public class ServiciosController implements Initializable {
 
+
+    @FXML
+    private TableColumn<?, ?> columnaNombre;
+    @FXML
+    private TableColumn<?, ?> columnaDuracion;
+    @FXML
+    private TableColumn<?, ?> columnaPrecio;
+    @FXML
+    private TableColumn<?, ?> columnaEstado;
+    @FXML
+    private Button botonAgregarS;
+    @FXML
+    private Button botoneditarServicio;
+    @FXML
+    private Button botonEliminarServicio;
     /**
      * Initializes the controller class.
      */
@@ -23,4 +42,16 @@ public class ServiciosController implements Initializable {
         // TODO
     }    
     
+    @FXML
+    private void agregarServicio(ActionEvent event) {
+    }
+
+    @FXML
+    private void editarServicio(ActionEvent event) {
+    }
+
+    @FXML
+    private void EliminarServicio(ActionEvent event) {
+    }
+
 }

@@ -9,8 +9,7 @@
 <?import javafx.scene.layout.VBox?>
 <?import javafx.scene.text.Font?>
 
-
-<VBox maxHeight="-Infinity" maxWidth="-Infinity" minHeight="-Infinity" minWidth="-Infinity" prefHeight="400.0" prefWidth="600.0" xmlns="http://javafx.com/javafx/18" xmlns:fx="http://javafx.com/fxml/1">
+<VBox maxHeight="-Infinity" maxWidth="-Infinity" minHeight="-Infinity" minWidth="-Infinity" prefHeight="400.0" prefWidth="600.0" xmlns="http://javafx.com/javafx/18" xmlns:fx="http://javafx.com/fxml/1" fx:controller="ec.edu.espol.proyecto2doparcial.ServiciosController">
    <children>
       <Label text="Servicios">
          <font>
@@ -22,25 +21,25 @@
       </Label>
       <TableView prefHeight="291.0" prefWidth="600.0">
         <columns>
-          <TableColumn prefWidth="75.0" text="Nombre" />
-          <TableColumn prefWidth="75.0" text="Duracion" />
-            <TableColumn prefWidth="75.0" text="Precio" />
-            <TableColumn prefWidth="75.0" text="Estado" />
+          <TableColumn fx:id="columnaNombre" prefWidth="75.0" text="Nombre" />
+          <TableColumn fx:id="columnaDuracion" prefWidth="75.0" text="Duracion" />
+            <TableColumn fx:id="columnaPrecio" prefWidth="75.0" text="Precio" />
+            <TableColumn fx:id="columnaEstado" prefWidth="75.0" text="Estado" />
         </columns>
       </TableView>
       <HBox prefHeight="100.0" prefWidth="200.0">
          <children>
-            <Button mnemonicParsing="false" text="Agregar Servicio">
+            <Button fx:id="botonAgregarS" mnemonicParsing="false" onAction="#agregarServicio" text="Agregar Servicio">
                <HBox.margin>
                   <Insets left="50.0" />
                </HBox.margin>
             </Button>
-            <Button mnemonicParsing="false" text="Editar Servicio">
+            <Button fx:id="botoneditarServicio" mnemonicParsing="false" onAction="#editarServicio" text="Editar Servicio">
                <HBox.margin>
                   <Insets left="100.0" />
                </HBox.margin>
             </Button>
-            <Button mnemonicParsing="false" text="Eliminar Servicio">
+            <Button fx:id="botonEliminarServicio" mnemonicParsing="false" onAction="#EliminarServicio" text="Eliminar Servicio">
                <HBox.margin>
                   <Insets left="100.0" />
                </HBox.margin>
