@@ -48,11 +48,11 @@ public class EmpleadosController implements Initializable {
     @Override
     public void initialize(URL url, ResourceBundle rb) {
         // TODO
-        columnaCedula.setCellValueFactory(new PropertyValueFactory<>("Cedula"));
-        columnaNombre.setCellValueFactory(new PropertyValueFactory<>("Nombre"));
-        columnaTelefono.setCellValueFactory(new PropertyValueFactory<>("Telefono"));
-        columnaEmail.setCellValueFactory(new PropertyValueFactory<>("Email"));
-        columnaEstado.setCellValueFactory(new PropertyValueFactory<>("Estado"));
+        columnaCedula.setCellValueFactory(new PropertyValueFactory<>("cedula"));
+        columnaNombre.setCellValueFactory(new PropertyValueFactory<>("nombre"));
+        columnaTelefono.setCellValueFactory(new PropertyValueFactory<>("telefono"));
+        columnaEmail.setCellValueFactory(new PropertyValueFactory<>("email"));
+        columnaEstado.setCellValueFactory(new PropertyValueFactory<>("estado"));
         tableviewEmpleado.getItems().setAll(Empleado.cargarlistaEmpleado());
         
     }    

@@ -69,7 +69,7 @@ public class Empleado extends Persona implements Serializable {
     }
     public static ArrayList<Empleado> cargarlistaEmpleado(){
         ArrayList<Empleado> listadeRetorno = new ArrayList<>();
-        
+        //leer
         try(ObjectInputStream lector =  new ObjectInputStream(new FileInputStream (Constantes.rutaEmpleados))){
             listadeRetorno = (ArrayList<Empleado>) lector.readObject();
             
@@ -87,7 +87,7 @@ public class Empleado extends Persona implements Serializable {
         ArrayList<Empleado> listaActualizada = cargarlistaEmpleado();
         
         listaActualizada.add(e);
-        
+        //ecribir
         try(ObjectOutputStream escritor = new ObjectOutputStream(new FileOutputStream(Constantes.rutaEmpleados))){
             escritor.writeObject(listaActualizada);
         }catch(IOException ex){

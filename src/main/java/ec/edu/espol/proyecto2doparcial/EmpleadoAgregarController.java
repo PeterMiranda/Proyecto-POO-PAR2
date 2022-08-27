@@ -5,6 +5,7 @@
 package ec.edu.espol.proyecto2doparcial;
 
 import ec.edu.espol.proyecto2doparcial.usuarios.Empleado;
+import java.io.IOException;
 import java.net.URL;
 import java.util.ResourceBundle;
 import javafx.event.ActionEvent;
@@ -37,11 +38,12 @@ public class EmpleadoAgregarController implements Initializable {
     }    
     
     @FXML
-    private void volver(ActionEvent event) {
+    private void volver(ActionEvent event) throws IOException {
+        App.setRoot("empleados");
     }
 
     @FXML
-    private void registrar(ActionEvent event) {
+    private void registrar(ActionEvent event) throws IOException {
     
     //Recuperando lo pedido
     //Cedula pedida
@@ -55,6 +57,7 @@ public class EmpleadoAgregarController implements Initializable {
     
     Empleado e1 = new Empleado(cedula,nombre,telefono,email,true);
     Empleado.registrarEmpleado(e1);
+    App.setRoot("empleados");
     }
 
 }
