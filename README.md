@@ -1,1 +1,1 @@
-# Proyecto-POO-PAR2
+# POO-P2-G8-2Parcial

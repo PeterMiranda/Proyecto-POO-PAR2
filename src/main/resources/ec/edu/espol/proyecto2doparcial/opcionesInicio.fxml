@@ -1,0 +1,28 @@
+<?xml version="1.0" encoding="UTF-8"?>
+
+<?import javafx.scene.control.Button?>
+<?import javafx.scene.layout.AnchorPane?>
+<?import javafx.scene.text.Font?>
+<?import javafx.scene.text.Text?>
+
+
+<AnchorPane id="AnchorPane" prefHeight="400.0" prefWidth="600.0" xmlns:fx="http://javafx.com/fxml/1" xmlns="http://javafx.com/javafx/18" fx:controller="ec.edu.espol.proyecto2doparcial.OpcionesInicioController">
+   <children>
+      <Text layoutX="247.0" layoutY="111.0" strokeType="OUTSIDE" strokeWidth="0.0" text="Menu">
+         <font>
+            <Font size="26.0" />
+         </font>
+      </Text>
+      <Text layoutX="87.0" layoutY="51.0" strokeType="OUTSIDE" strokeWidth="0.0" text="Centro de terapias de lenguaje y aprendizaje">
+         <font>
+            <Font size="23.0" />
+         </font>
+      </Text>
+      <Button layoutX="302.0" layoutY="187.0" mnemonicParsing="false" text="Servicios" />
+      <Button layoutX="187.0" layoutY="144.0" mnemonicParsing="false" text="Empleados" />
+      <Button layoutX="202.0" layoutY="187.0" mnemonicParsing="false" text="Clientes" />
+      <Button layoutX="260.0" layoutY="225.0" mnemonicParsing="false" text="Citas" />
+      <Button layoutX="295.0" layoutY="144.0" mnemonicParsing="false" text="Atenciones" />
+      <Button layoutX="526.0" layoutY="360.0" mnemonicParsing="false" text="Salir" />
+   </children>
+</AnchorPane>
