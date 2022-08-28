@@ -4,7 +4,6 @@
  */
 package ec.edu.espol.proyecto2doparcial;
 
-import ec.edu.espol.proyecto2doparcial.usuarios.Empleado;
 import java.io.IOException;
 import java.net.URL;
 import java.util.ResourceBundle;
@@ -12,21 +11,24 @@ import javafx.event.ActionEvent;
 import javafx.fxml.FXML;
 import javafx.fxml.Initializable;
 
+import javafx.scene.control.ComboBox;
 import javafx.scene.control.TextField;
 /**
  * FXML Controller class
  *
  * @author irvin
  */
-public class EmpleadoAgregarController implements Initializable {
+public class EmpleadoEditarController implements Initializable {
 
 
     @FXML
-    private TextField txtCedula;
+    private TextField txtcedula;
     @FXML
     private TextField txtNombre;
     @FXML
     private TextField txtTelefono;
+    @FXML
+    private ComboBox<?> comboboxEstado;
     @FXML
     private TextField txtEmail;
     /**
@@ -43,22 +45,8 @@ public class EmpleadoAgregarController implements Initializable {
     }
 
     @FXML
-    private void registrar(ActionEvent event) throws IOException {
-    
-    //Recuperando lo pedido
-    //Cedula pedida
-    //int cedula = txtCedula.
-    String cedula = txtCedula.getText();
-    //recuperando nombre
-    String nombre = txtNombre.getText();
-    //recuperando telefono
-    String telefono = txtTelefono.getText();
-    //recuperando email
-    String email = txtEmail.getText();
-    
-    Empleado e1 = new Empleado(Integer.parseInt(cedula), nombre,Integer.parseInt(telefono), email, true);
-    Empleado.registrarEmpleado(e1);
-    App.setRoot("empleados");
+    private void botonEditar(ActionEvent event) {
+        
     }
 
 }

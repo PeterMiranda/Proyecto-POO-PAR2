@@ -1,8 +1,12 @@
 package ec.edu.espol.proyecto2doparcial;
+import ec.edu.espol.proyecto2doparcial.usuarios.Empleado;
 import java.io.IOException;
+import java.net.URL;
+import java.util.ResourceBundle;
 import javafx.fxml.FXML;
+import javafx.fxml.Initializable;
 
-public class PrimaryController {
+public class PrimaryController implements Initializable {
 
     @FXML
     private void switchToSecondary() throws IOException {
@@ -27,6 +31,10 @@ public class PrimaryController {
      @FXML
     private void switchToClientes() throws IOException {
         App.setRoot("clientes");
+    }
+    @Override
+    public void initialize(URL url, ResourceBundle rb){
+       
     }
 }
 

@@ -2,7 +2,6 @@ ec\edu\espol\proyecto2doparcial\SecondaryController.class
 ec\edu\espol\proyecto2doparcial\ActividadesRealizadasController.class
 ec\edu\espol\proyecto2doparcial\RegistroDeAtencionController.class
 ec\edu\espol\proyecto2doparcial\ServiciosController.class
-ec\edu\espol\proyecto2doparcial\PrimaryController.class
 ec\edu\espol\proyecto2doparcial\CitaController.class
 module-info.class
 ec\edu\espol\proyecto2doparcial\OpcionesInicioController.class
