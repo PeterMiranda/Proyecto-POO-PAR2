@@ -11,4 +11,5 @@ package ec.edu.espol.proyecto2doparcial.usuarios;
 public class Constantes {
     public static final String rutaEmpleados = "archivos/empleados.ser";
     public static final String rutaServicios = "archivos/servicios.ser";
+    public static final String rutaEstado = "archivos/estados.txt";
 }

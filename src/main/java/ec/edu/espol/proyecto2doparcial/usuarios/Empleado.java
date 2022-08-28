@@ -1,7 +1,9 @@
 package ec.edu.espol.proyecto2doparcial.usuarios;
+import java.io.BufferedWriter;
 import java.io.FileInputStream;
 import java.io.FileNotFoundException;
 import java.io.FileOutputStream;
+import java.io.FileWriter;
 import java.io.IOException;
 import java.io.ObjectInputStream;
 import java.io.ObjectOutputStream;
@@ -142,30 +144,18 @@ public class Empleado implements Serializable {
         ArrayList<Empleado> listaActualizada = cargarlistaEmpleado();
         
         listaActualizada.add(e);
-        //ecribir
+        
+        //ecribir en object serializando no domino eso asi que lo cambiare a buffered
+        
         try(ObjectOutputStream escritor = new ObjectOutputStream(new FileOutputStream(Constantes.rutaEmpleados))){
             escritor.writeObject(listaActualizada);
         }catch(IOException ex){
             ex.printStackTrace();
         }
-    
-    
-    }    
-    public static int verificarEmpleado(int cedula){
-        ArrayList<Empleado> listadeRetorno = new ArrayList<>();
-        //leer
-        try(ObjectInputStream lector =  new ObjectInputStream(new FileInputStream (Constantes.rutaEmpleados))){
-            listadeRetorno = (ArrayList<Empleado>) lector.readObject();
-            
-            
-        }catch(FileNotFoundException e){
-                System.out.println("No se encontro el archivo");
-        }catch(IOException e){
-            e.printStackTrace();
-        }catch(Exception e){
-            System.out.println("Error inesperado");
-        }
-        return listadeRetorno;
     }
+   
+    /*public static void verificarEmpleado(int cedula){
+       
+    }*/
 
 }

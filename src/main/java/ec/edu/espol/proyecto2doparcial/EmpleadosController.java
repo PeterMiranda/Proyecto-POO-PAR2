@@ -64,7 +64,7 @@ public class EmpleadosController implements Initializable {
 
     @FXML
     private void botoneditarEmpleado(ActionEvent event) throws IOException {
-        App.setRoot("verificarEmpleado");
+        App.setRoot("empleadoEditar");
     }
 
     @FXML
