@@ -19,7 +19,7 @@
             <Insets left="250.0" />
          </VBox.margin>
       </Label>
-      <TableView fx:id="tableviewEmpleado" prefHeight="279.0" prefWidth="600.0">
+      <TableView fx:id="tableviewEmpleado" onMouseClicked="#selectMouse" prefHeight="279.0" prefWidth="600.0">
         <columns>
           <TableColumn fx:id="columnaCedula" prefWidth="75.0" text="Cedula" />
           <TableColumn fx:id="columnaNombre" prefWidth="75.0" text="Nombre" />

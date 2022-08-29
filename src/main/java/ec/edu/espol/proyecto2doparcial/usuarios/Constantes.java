@@ -9,7 +9,7 @@ package ec.edu.espol.proyecto2doparcial.usuarios;
  * @author irvin
  */
 public class Constantes {
-    public static final String rutaEmpleados = "archivos/empleados.ser";
+    public static final String rutaEmpleados = "archivos/empleados.txt";
     public static final String rutaServicios = "archivos/servicios.ser";
     public static final String rutaEstado = "archivos/estados.txt";
 }

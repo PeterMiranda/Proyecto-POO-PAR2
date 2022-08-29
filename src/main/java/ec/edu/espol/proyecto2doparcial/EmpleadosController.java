@@ -7,6 +7,7 @@ package ec.edu.espol.proyecto2doparcial;
 import ec.edu.espol.proyecto2doparcial.usuarios.Empleado;
 import java.io.IOException;
 import java.net.URL;
+import java.util.ArrayList;
 import java.util.ResourceBundle;
 import javafx.event.ActionEvent;
 import javafx.fxml.FXML;
@@ -15,6 +16,7 @@ import javafx.scene.control.Button;
 import javafx.scene.control.TableColumn;
 import javafx.scene.control.TableView;
 import javafx.scene.control.cell.PropertyValueFactory;
+import javafx.scene.input.MouseEvent;
 
 /**
  * FXML Controller class
@@ -69,6 +71,20 @@ public class EmpleadosController implements Initializable {
 
     @FXML
     private void botonEliminarEmpleado(ActionEvent event) {
+        Empleado empleadoSeleccionado = tableviewEmpleado.getSelectionModel().getSelectedItem();
+
+                
+        ArrayList<Empleado> lista = Empleado.cargarlistaEmpleado();
+                    
+                    for (int i=0; i<lista.size();i++){
+                        if ((empleadoSeleccionado.getCedula()).equals(lista.get(i).getCedula())){
+                            empleadoSeleccionado.setEstado(false);
+                        }
+                    }
+                    
+            Empleado.sobreescribirTXT(lista);
+            tableviewEmpleado.getItems().setAll(Empleado.cargarlistaEmpleado());
     }
-    
+
+
 }

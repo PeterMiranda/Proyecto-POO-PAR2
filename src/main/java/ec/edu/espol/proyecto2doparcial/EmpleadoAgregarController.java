@@ -4,7 +4,10 @@
  */
 package ec.edu.espol.proyecto2doparcial;
 
+import ec.edu.espol.proyecto2doparcial.usuarios.Constantes;
 import ec.edu.espol.proyecto2doparcial.usuarios.Empleado;
+import java.io.BufferedWriter;
+import java.io.FileWriter;
 import java.io.IOException;
 import java.net.URL;
 import java.util.ResourceBundle;
@@ -42,9 +45,11 @@ public class EmpleadoAgregarController implements Initializable {
         App.setRoot("empleados");
     }
 
+    
+    
     @FXML
     private void registrar(ActionEvent event) throws IOException {
-    
+        
     //Recuperando lo pedido
     //Cedula pedida
     //int cedula = txtCedula.
@@ -56,9 +61,22 @@ public class EmpleadoAgregarController implements Initializable {
     //recuperando email
     String email = txtEmail.getText();
     
+    
+    try (BufferedWriter bw = new BufferedWriter(new FileWriter(Constantes.rutaEmpleados,true));){
+            bw.newLine();
+            bw.write(cedula+","+nombre+","+telefono+","+email+","+true);
+        }catch (IOException e){
+            System.out.println("error");
+        }
+        //tablaEmpleados.getItems().setAll() = Empleado.cargarlistaEmpleado());
+         App.setRoot("empleados");
+    
+    /*
     Empleado e1 = new Empleado(Integer.parseInt(cedula), nombre,Integer.parseInt(telefono), email, true);
     Empleado.registrarEmpleado(e1);
     App.setRoot("empleados");
+    System.out.println(Empleado.cargarlistaEmpleado());
+*/
     }
 
 }

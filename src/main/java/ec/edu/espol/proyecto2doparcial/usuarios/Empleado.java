@@ -1,8 +1,10 @@
 package ec.edu.espol.proyecto2doparcial.usuarios;
+import java.io.BufferedReader;
 import java.io.BufferedWriter;
 import java.io.FileInputStream;
 import java.io.FileNotFoundException;
 import java.io.FileOutputStream;
+import java.io.FileReader;
 import java.io.FileWriter;
 import java.io.IOException;
 import java.io.ObjectInputStream;
@@ -14,14 +16,14 @@ import java.util.Scanner;
 //import javax.swing.text.StyledEditorKit.BoldAction;
 
 public class Empleado implements Serializable {
-    public int cedula;
+    public String cedula;
     public String nombre;
-    public int telefono;
+    public String telefono;
     public String email;
     public boolean estado;
 //Constructor
 
-    public Empleado(int cedula, String nombre, int telefono, String email, boolean estado) {
+    public Empleado(String cedula, String nombre, String telefono, String email, boolean estado) {
         this.cedula = cedula;
         this.nombre = nombre;
         this.telefono = telefono;
@@ -29,56 +31,57 @@ public class Empleado implements Serializable {
         this.estado = estado;
     }
 //getters
-    public int getCedula(){
+
+    public String getCedula() {
         return cedula;
-    }
-//setters
-    public void setCedula(int cedula) {
-        this.cedula = cedula;
     }
 
     public String getNombre() {
         return nombre;
     }
-//setters
-    public void setNombre(String nombre) {
-        this.nombre = nombre;
-    }
 
-    public int getTelefono() {
+    public String getTelefono() {
         return telefono;
-    }
-
-    public void setTelefono(int telefono) {
-        this.telefono = telefono;
     }
 
     public String getEmail() {
         return email;
     }
 
+    public boolean getEstado() {
+        return estado;
+    }
+    
+    // Setters
+
+    public void setCedula(String cedula) {
+        this.cedula = cedula;
+    }
+
+    public void setNombre(String nombre) {
+        this.nombre = nombre;
+    }
+
+    public void setTelefono(String telefono) {
+        this.telefono = telefono;
+    }
+
     public void setEmail(String email) {
         this.email = email;
     }
 
-    public boolean isEstado() {
-        return estado;
-    }
-    public boolean getEstado(){
-        return estado;
-    }
-
-    //Getters
     public void setEstado(boolean estado) {
         this.estado = estado;
     }
+    
+
 
     @Override
     public String toString() {
         return "Empleado{" + "cedula=" + cedula + ", nombre=" + nombre + ", telefono=" + telefono + ", email=" + email + ", estado=" + estado + '}';
     }
-
 /*
+
     //Editar
     @Override
     public void editar(){
@@ -105,7 +108,7 @@ public class Empleado implements Serializable {
     }
     }
     }
-     */
+    
     public boolean eliminar() {
         //Cambiara el estado a inactivo osea false
         return estado=false;
@@ -137,11 +140,14 @@ public class Empleado implements Serializable {
         }catch(Exception e){
             System.out.println("Error inesperado");
         }
-        return listadeRetorno;
+        return listadeRetorno; 
     }
+    
+        //ArrayList<Empleado> listaActualizada = cargarlistaEmpleado();
     
     public static void registrarEmpleado(Empleado e){
         ArrayList<Empleado> listaActualizada = cargarlistaEmpleado();
+        
         
         listaActualizada.add(e);
         
@@ -157,5 +163,32 @@ public class Empleado implements Serializable {
     /*public static void verificarEmpleado(int cedula){
        
     }*/
-
+    
+    public static ArrayList<Empleado> cargarlistaEmpleado(){
+        ArrayList<Empleado> listadeRetorno = new ArrayList<>();
+        //lector
+        try(BufferedReader lector =  new BufferedReader(new FileReader (Constantes.rutaEmpleados))){
+            lector.readLine();
+            String linea;
+            while ((linea = lector.readLine())!=null){
+                String[] datos = linea.split(","); 
+                listadeRetorno.add(new Empleado(datos[0],datos[1],datos[2],datos[3],Boolean.parseBoolean(datos[4])));
+            }
+        }catch (IOException e){
+            
+        }
+        return listadeRetorno;
+    }
+    
+    public static void sobreescribirTXT(ArrayList<Empleado> empleados){
+        try (BufferedWriter bw = new BufferedWriter(new FileWriter(Constantes.rutaEmpleados, false));){
+            //bw.write("Cédula,nombre,telefono,email,estado");
+            for(Empleado e:empleados){
+                bw.newLine();
+                bw.write(e.getCedula()+","+e.getNombre()+","+e.getTelefono()+","+e.getEmail()+","+e.estado);
+            }
+        }catch (IOException e){
+            System.out.println("error");
+        }
+    }
 }
